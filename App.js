@@ -1,17 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { Provider } from 'react-redux';
+import { TailwindProvider } from "tailwindcss-react-native";
 
+import HomeScreen from './screens/HomeScreen';
 import { store } from './store';
 
 
 export default function App() {
   return (
     <Provider store={store}>
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
+      <TailwindProvider>
         <StatusBar style='auto' />
-      </View>
+        <HomeScreen />
+      </TailwindProvider>
     </Provider>
   );
 }

@@ -1,6 +1,7 @@
 import { View, Text, FlatList, TouchableOpacity, Image } from 'react-native';
 import React from 'react';
 import { Icon } from '@rneui/base';
+import { useNavigation } from '@react-navigation/native';
 
 
 const data = [
@@ -19,6 +20,8 @@ const data = [
 ];
 
 const NavOptions = () => {
+  const navigation = useNavigation();
+
   return (
     <FlatList
       data={data}
@@ -36,13 +39,13 @@ const NavOptions = () => {
               source={{ uri: item.image }}
             />
             <Text className='mt-2 text-lg font-semibold'>{item.title}</Text>
-
             <View className='p-2 bg-black rounded-full w-10 mt-4'>
               <Icon
-                name='arrowright' color='white' type='antdesign'
+                name='arrowright'
+                color='white'
+                type='antdesign'
               />
             </View>
-            
           </View>
         </TouchableOpacity>
       )}

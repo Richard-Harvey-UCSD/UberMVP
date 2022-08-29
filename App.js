@@ -9,6 +9,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { store } from './store';
 import HomeScreen from './screens/HomeScreen';
 import MapScreen from './screens/MapScreen';
+import EatsScreen from './screens/EatsScreen';
 
 
 const Stack = createNativeStackNavigator();
@@ -23,6 +24,7 @@ export default function App() {
             <Stack.Navigator>
               <Stack.Screen name='HomeScreen' component={HomeScreen} options={{ headerShown: false }} />
               <Stack.Screen name='MapScreen' component={MapScreen} options={{ headerShown: false }} />
+              <Stack.Screen name='EatsScreen' component={EatsScreen} options={{ headerShown: false }} />
             </Stack.Navigator>
           </TailwindProvider>
         </SafeAreaProvider>

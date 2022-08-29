@@ -1,7 +1,9 @@
 import { Image, SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
+import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 
 import NavOptions from '../components/NavOptions';
+import { GOOGLE_MAPS_APIKEY } from '@env';
 
 
 const HomeScreen = () => {
@@ -15,6 +17,12 @@ const HomeScreen = () => {
             height: 100,
             resizeMode: 'contain',
           }}
+        />
+
+        <GooglePlacesAutocomplete
+          placeholder='Where from?'
+          nearbyPlacesAPI='GooglePlacesSearch'
+          debounce={400}
         />
 
         <NavOptions />

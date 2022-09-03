@@ -16,14 +16,19 @@ const HomeScreen = () => {
   return (
     <SafeAreaView className='bg-white h-full'>
       <View className='p-5'>
-        <Image
+        {/* <Image
           source={{ uri: 'https://links.papareact.com/gzs' }}
           style={{
             width: 100,
             height: 100,
             resizeMode: 'contain',
+            marginLeft: 6
           }}
-        />
+        /> */}
+
+        <Text className='text-5xl font-semibold p-2'>
+          Uber Carpool
+        </Text>
 
         <GooglePlacesAutocomplete
           styles={{

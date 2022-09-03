@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { KeyboardAvoidingView, Platform } from 'react-native';
 import { Provider } from 'react-redux';
 import { TailwindProvider } from "tailwindcss-react-native";
 import { SafeAreaProvider } from 'react-native-safe-area-context';
@@ -21,11 +21,28 @@ export default function App() {
         <SafeAreaProvider>
           <TailwindProvider>
             <StatusBar style='auto' />
-            <Stack.Navigator>
-              <Stack.Screen name='HomeScreen' component={HomeScreen} options={{ headerShown: false }} />
-              <Stack.Screen name='MapScreen' component={MapScreen} options={{ headerShown: false }} />
-              <Stack.Screen name='EatsScreen' component={EatsScreen} options={{ headerShown: false }} />
-            </Stack.Navigator>
+            <KeyboardAvoidingView
+              style={{ flex: 1 }}
+              behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+            >
+              <Stack.Navigator>
+                <Stack.Screen
+                  name='HomeScreen'
+                  component={HomeScreen}
+                  options={{ headerShown: false }}
+                />
+                <Stack.Screen
+                  name='MapScreen'
+                  component={MapScreen}
+                  options={{ headerShown: false }}
+                />
+                <Stack.Screen
+                  name='EatsScreen'
+                  component={EatsScreen}
+                  options={{ headerShown: false }}
+                />
+              </Stack.Navigator>
+            </KeyboardAvoidingView>
           </TailwindProvider>
         </SafeAreaProvider>
       </NavigationContainer>
@@ -33,11 +50,3 @@ export default function App() {
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

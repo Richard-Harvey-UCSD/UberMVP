@@ -1,7 +1,8 @@
+import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { KeyboardAvoidingView, Platform } from 'react-native';
 import { Provider } from 'react-redux';
-import { TailwindProvider } from "tailwindcss-react-native";
+import { TailwindProvider } from 'tailwindcss-react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -20,7 +21,7 @@ export default function App() {
       <NavigationContainer>
         <SafeAreaProvider>
           <TailwindProvider>
-            <StatusBar style='auto' />
+            <StatusBar style={'auto'} />
             <KeyboardAvoidingView
               style={{ flex: 1 }}
               behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
@@ -50,4 +51,3 @@ export default function App() {
     </Provider>
   );
 }
-

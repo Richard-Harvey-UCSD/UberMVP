@@ -13,12 +13,15 @@ const data = [
     title: 'Get a ride',
     image: 'https://links.papareact.com/3pn',
     screen: 'MapScreen',
+    style: '',
   },
   {
     id: 456,
-    title: 'Order food',
-    image: 'https://links.papareact.com/28w',
+    title: 'Give a ride',
+    image: 'https://links.papareact.com/3pn',
     screen: 'EatsScreen',
+    transform: [{ rotateX: '180deg' }, { rotateY: '0deg' }, { rotateZ: '180deg' }, ]
+    // transform: [{ perspective: 1 }]
   },
 ];
 
@@ -42,7 +45,8 @@ const NavOptions = () => {
               style={{
                 width: 120,
                 height: 120,
-                resizeMode: 'contain'
+                resizeMode: 'contain',
+                transform: item.transform
               }}
               source={{ uri: item.image }}
             />

@@ -12,7 +12,6 @@ import HomeScreen from './screens/HomeScreen';
 import MapScreen from './screens/MapScreen';
 import EatsScreen from './screens/EatsScreen';
 
-
 const Stack = createNativeStackNavigator();
 
 export default function App() {
@@ -21,7 +20,7 @@ export default function App() {
       <NavigationContainer>
         <SafeAreaProvider>
           <TailwindProvider>
-            <StatusBar style={'auto'} />
+            <StatusBar style='auto' />
             <KeyboardAvoidingView
               style={{ flex: 1 }}
               behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
